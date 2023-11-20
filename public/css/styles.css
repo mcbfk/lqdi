@@ -204,15 +204,6 @@ input:required {
     padding: 10px;
 }
 
-/* Remove a borda vermelha quando o input é clicado e está vazio */
-input:focus:invalid {
-    border-color: #ccc; /* Define a cor da borda para a cor desejada */
-}
-
-/* Define a cor da borda como vermelha apenas quando o input é inválido */
-input:invalid {
-    border-color: #f00!important; /* Define a cor da borda como vermelha */
-}
 input:focus, textarea:focus {
     outline: none;
 }
@@ -228,6 +219,16 @@ input:focus, textarea:focus {
     border: none;
     height: 47px;
 }
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus,
+.form input[type="file"]:focus {
+  border-radius: 60px;
+  border: 2px solid #0999BA;
+  background: rgba(241, 244, 249, 0.50);
+}
+
 
 .form textarea {
     height: 192px;
