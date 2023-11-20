@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de Inscrições</title>
+</head>
+<body>
+    <h1>Listagem de Inscrições</h1>
+    <table id="inscriptions">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://localhost:porta_do_seu_servidor/subscriptions', // Altere para a porta correta.
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                var tbody = $('#inscriptions tbody');
+                data.forEach(function (entry) {
+                    var row = $('<tr>');
+                    row.append($('<td>').text(entry.name));
+                    row.append($('<td>').text(entry.email));
+                    tbody.append(row);
+                });
+            },
+            error: function (error) {
+                console.error('Erro ao obter a lista de inscrições:', error);
+                alert('Erro ao carregar a lista de inscrições. Por favor, tente novamente mais tarde.');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

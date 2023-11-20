@@ -1,0 +1,533 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('font/Satoshi-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #08111E;
+    font-family: Plus Jakarta Sans;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+h2 {
+    color: #080808;
+    font-family: Plus Jakarta Sans;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+section, footer {
+    padding: 50px;
+}
+
+.fit-content { 
+    width: fit-content;
+}
+
+.message {
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.success {
+    background-color: #4CAF50;
+}
+
+.error {
+    background-color: #f44336;
+}
+
+
+#section1 {
+    height: 85vh;
+    background-color: #F1F4F9;
+    padding-top: 200px;
+    border-bottom: 2px solid #E7EBEE
+}
+
+#section2 {
+    margin-top: 130px;
+    padding-top: 100px;
+}
+
+.header {   
+    display: flex;
+    width: 100%;
+    height: 62px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    position: fixed;
+    background-color: #F1F4F9;
+    z-index: 999;
+}
+
+.header-scrolled .hide-on-scroll {
+    display: none;
+}
+
+.header-scrolled {
+    background-color: white;
+}
+
+.logo {
+    width: 78px;
+    height: 46px;
+}
+
+p {
+    margin: 0;
+    color: #08111E;
+    font-family: Plus Jakarta Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+button{
+    border-radius: 40px;
+    background: #000;
+    color: #FFF;
+    font-family: Plus Jakarta Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    padding: 12px 30px;
+    border: none;
+}
+
+.button1:hover {
+    background-color: #003d82;
+}
+
+.boxHome p {    
+    margin-top: 31px;
+}
+
+.boxHome button {
+    margin-top: 46px;
+}
+
+.imgBox {
+  position: relative;
+  height: 600px; /* Ajuste a altura para acomodar todas as suas imagens sem sobrepor o conteúdo da página */
+  margin-left: auto; /* Se necessário para alinhar o contêiner */
+  margin-right: auto; /* Se necessário para alinhar o contêiner */
+}
+
+.imgBox img {
+  position: absolute;
+  width: 280px; /* Ajuste a largura como necessário */
+}
+
+/* Ajuste os valores top, left e z-index com base no layout exato que você está tentando alcançar */
+.imgBox img:nth-of-type(1) {
+  top: -10px; /* Ajuste conforme necessário */
+  left: -200px; /* Ajuste conforme necessário */
+  z-index: 1;
+}
+
+.imgBox img:nth-of-type(2) {
+  top: 90px;
+  left: 100px; /* Ajuste para posicionar a imagem à direita */
+  z-index: 2;
+}
+
+.imgBox img:nth-of-type(3) {
+  bottom: -90px;
+  left: -200px;
+  z-index: 3;
+}
+
+.imgBox img:nth-of-type(4) {
+    right: 220px;
+    bottom: -90px;
+    z-index: 4;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os elementos do formulário */
+}
+.form .input-container {
+    position: relative;
+}
+
+.form .validatable .checkmark {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    right: -35px; /* Ajuste a posição para que a setinha fique fora do input */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #53DB9D;
+    font-size: 24px;
+}
+
+
+
+.form .input-container .position-relative {
+    height: 100%;
+}
+
+.form label {
+    color: #101113;
+    font-family: Plus Jakarta Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+input:required {
+    border: 2px solid #ccc; /* cor de borda padrão */
+    border-radius: 5px; /* bordas arredondadas */
+    padding: 10px;
+}
+
+/* Remove a borda vermelha quando o input é clicado e está vazio */
+input:focus:invalid {
+    border-color: #ccc; /* Define a cor da borda para a cor desejada */
+}
+
+/* Define a cor da borda como vermelha apenas quando o input é inválido */
+input:invalid {
+    border-color: #f00!important; /* Define a cor da borda como vermelha */
+}
+input:focus, textarea:focus {
+    outline: none;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea,
+.form input[type="file"] {
+    width: 100%;
+    padding-left: 20px;
+    border-radius: 60px;
+    background: #F1F4F9;
+    border: none;
+    height: 47px;
+}
+
+.form textarea {
+    height: 192px;
+    border-radius: 10px;
+    background: #F1F4F9;
+}
+
+.form .arquivo{
+    color: #08111E;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Estilos básicos para o botão de upload e o texto */
+.arquivoInput {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço uniformemente */
+    align-items: center;
+    border-radius: 10px;
+    border: 2px dashed rgba(63, 63, 63, 0.40);
+    background: #F7F7F7;
+}
+
+.arquivoInput button {
+    color: rgba(16, 17, 19, 0.60);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 5px;
+    background: #F1F4F9;
+}
+
+.arquivoInput span {
+    flex-grow: 1;
+    padding-left: 12.5px; /* Para alinhar o texto com o botão */
+    text-align: left;
+    color: #9BA2AE;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 21px */
+}
+
+.form button[type="submit"] {
+    width: fit-content;
+    color: #FFF;
+    font-family: Plus Jakarta Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 16px 38px;
+    border-radius: 40px;
+    background: #000;
+    margin-top: 34px;
+}
+
+.form button[type="submit"]:hover {
+    /* Estilo do botão de envio ao passar o mouse */
+    background-color: #003d82;
+}
+
+.button2 {
+    background-color: #0AB2B7;
+}
+
+.cards .card {
+    width: 320px;
+}
+
+.cards .card, .cards .card2 {
+    border: none;
+    border-radius: 19px;
+}
+
+.cards img {
+    width: 317px;
+    height: 260px;
+}
+
+.cards .card .title {
+    color: #08111E;
+    font-family: Plus Jakarta Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 36px;
+}
+
+.cards .card .subtitle {
+    color: #08111E;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.cards .card .articleButton {
+    margin-top: 40px;
+}
+
+.cards .card button {
+    background: transparent;
+    padding: 0;
+    color: #101113;
+    font-family: Plus Jakarta Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: start;
+}
+
+.cards .card2 {
+    position: relative;
+    width: 480px;
+    height: 650px;
+    background-color: #000;
+    margin-left: 20px;
+    padding: 58px 40px 70px 40px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.card2 .input-wrapper input[type="text"] {
+    width: 100%;
+    border-radius: 50px;
+    border: 2px solid #FFF;
+    padding: 28px 20px; /* Ajuste o padding conforme necessário */
+    margin: 105px 0 99px 0;
+    color: #FFF;
+    text-align: center; /* Centralizado por padrão */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    outline: none;
+}
+
+.card2 .input-wrapper input[type="text"]:focus,
+.card2 .input-wrapper input[type="text"]:not(:placeholder-shown) {
+    text-align: left; /* Alinhado à esquerda quando focado ou quando há texto */
+    background-color: #FFF; /* Cor de fundo branca quando o input está focado */
+    color: #000; /* Cor do texto preta para garantir visibilidade contra o fundo branco */
+}
+
+.card2 .input-wrapper input[type="text"]:focus::placeholder {
+    color: transparent; /* Torna o placeholder transparente quando o input está focado */
+}
+
+.card2 .input-wrapper .labelCard2 {
+    position: absolute;
+    top: 30px;
+    left: 30px; /* Alinhado à esquerda com o início do input */
+    color: #FFF; /* Cor branca para o texto */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.cards .card2 input::placeholder {
+    color: #FFF;
+}
+
+.cards .card2 .sociais {
+    position: absolute;
+    bottom: 100px;
+    font-family: Plus Jakarta Sans;
+}
+
+.cards .card2 .sociais .d-flex {
+    margin-top: 24px;
+}
+
+.cards .card2 .sociais .circle {
+    width: 48px;
+    height: 48px;
+    background-color:#FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.cards .card2 h2, .cards .card2 .sociais {
+    color: #FFF;
+}
+
+.cards .card2 .sociais img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background: #000;
+    color: white;
+}
+
+.footer .d-flex {
+    margin-right: 100px;
+}
+
+.footer img {
+    width: 80px;
+    height: 46.957px;
+}
+
+.footer .footerBox {
+    max-width: 260px;
+}
+
+.footer .footerTitle {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer .footerSubtitle {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media (max-width: 1200px) {
+    .imgBox img:nth-of-type(1) {
+      top: -10px; /* Ajuste conforme necessário */
+      left: -100px; /* Ajuste conforme necessário */
+      z-index: 1;
+    }
+
+    .imgBox img:nth-of-type(2) {
+        display: none;
+    }
+
+    .imgBox img:nth-of-type(3) {
+      bottom: -90px;
+      left: -100px;
+      z-index: 3;
+    }
+
+    .imgBox img:nth-of-type(4) {
+        right: 120px;
+        bottom: -90px;
+        z-index: 4;
+}
+
+  
+}
+
+@media (max-width: 780px) {
+    .boxHome {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgBox {
+        display: none;
+    }
+
+    .arquivoInput {
+        flex-wrap: wrap;
+    }
+
+    .arquivoInput button {
+        width: 100%;
+    }
+
+    .arquivoInput span {
+        text-align: center;
+    }
+}
