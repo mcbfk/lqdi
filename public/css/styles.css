@@ -303,6 +303,7 @@ input:focus, textarea:focus {
 
 .cards .card {
     width: 320px;
+    height: 556px;
 }
 
 .cards .card, .cards .card2 {
@@ -333,10 +334,22 @@ input:focus, textarea:focus {
     font-weight: 400;
     line-height: normal;
     margin-top: 20px;
+    padding-bottom: 50px;
 }
 
 .cards .card .articleButton {
-    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.cards .card .articleButton img {
+    width: 9px;
+    height: 9px;
+    margin-top: 4px;
+    margin-left: 12px;
 }
 
 .cards .card button {
