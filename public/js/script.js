@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('form-inscricao');
     var messageDiv = document.getElementById('message');
-
+    console.log('Passou aqui 1')
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         var formData = new FormData(this);
@@ -62,33 +62,38 @@ document.addEventListener('DOMContentLoaded', function() {
             body: formData
         })
         .then(response => {
-            if (!response.ok) {
-                if (response.status === 409) {
-                    return response.json(); 
-                }
+            if (response.status === 409) {
+                return response.json(); // Email já cadastrado
+            } else if (response.ok) {
+                return response.json(); // Sucesso
+            } else {
                 throw new Error('Network response was not ok: ' + response.statusText);
             }
-            return response.json();
         })
         .then(data => {
-            var messageDiv = document.getElementById('message');
+            console.log('Passou aqui 2')
             if (data.error) {
                 // Use a mensagem de erro do servidor
+                console.log('Passou aqui erro')
                 messageDiv.textContent = data.error;
                 messageDiv.className = 'message error';
             } else {
                 // Outras mensagens de sucesso
+                console.log('Passou aqui sucesso')
                 messageDiv.textContent = data.message || 'Inscrição feita com sucesso!';
                 messageDiv.className = 'message success';
             }
             messageDiv.style.display = 'block';
+
+            setTimeout(function(){
+                console.log("Some msg");
+                messageDiv.style.display = 'none';
+            }, 3500);
         })
         .catch(error => {
-            var messageDiv = document.getElementById('message');
             messageDiv.textContent = error.message;
             messageDiv.className = 'message error';
             messageDiv.style.display = 'block';
         });
     });
 });
-
