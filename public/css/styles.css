@@ -224,7 +224,6 @@ input:focus, textarea:focus {
 .form input[type="email"]:focus,
 .form textarea:focus,
 .form input[type="file"]:focus {
-  border-radius: 60px;
   border: 2px solid #0999BA;
   background: rgba(241, 244, 249, 0.50);
 }
